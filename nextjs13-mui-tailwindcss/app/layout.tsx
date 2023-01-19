@@ -1,18 +1,19 @@
-import './globals.css'
-
+"use client";
+import "./globals.css";
+import { darkTheme } from "./theme/themes";
+import { ThemeProvider, CssBaseline } from "@mui/material";
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <body>{children}</body>
+      </ThemeProvider>
     </html>
-  )
+  );
 }
