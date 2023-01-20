@@ -2,6 +2,7 @@
 import "./globals.css";
 import { darkTheme } from "./theme/themes";
 import { ThemeProvider, CssBaseline } from "@mui/material";
+import ResponsiveAppBar from "./theme/navbar";
 export default function RootLayout({
   children,
 }: {
@@ -12,8 +13,13 @@ export default function RootLayout({
       <head />
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
-        <body>{children}</body>
+        <body>
+          <ResponsiveAppBar />
+          {children}
+        </body>
       </ThemeProvider>
     </html>
   );
 }
+
+//create a fuction to validate an email with regex and comment each line
